@@ -1,4 +1,25 @@
 /******************************************/
+/**          wrc-管理用户表             **/
+/*****************************************/
+DROP TABLE IF EXISTS wrc_admin;
+CREATE TABLE wrc_admin (
+  gmt_created DATETIME NOT NULL COMMENT '创建时间',
+  gmt_modified DATETIME NOT NULL COMMENT '修改时间',
+  created_by VARCHAR(32) COMMENT '创建人',
+  modified_by VARCHAR(32) COMMENT '修改人',
+  id INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键id,作为@BizId',
+  login_name VARCHAR(36) NOT NULL COMMENT '登陆名',
+  pwd VARCHAR(36) NOT NULL COMMENT '密码',
+  salt VARCHAR(32) NOT NULL COMMENT '盐',
+  nick_name VARCHAR(50) DEFAULT NULL COMMENT '名字',
+  avatar  VARCHAR(150) DEFAULT NULL COMMENT '头像',
+  intro VARCHAR(255) DEFAULT NULL COMMENT '个人简介',
+  remark VARCHAR(255) DEFAULT NULL COMMENT '备注',
+  rol_id int(11) DEFAULT 1 COMMENT '角色',
+  is_valid int(5) DEFAULT 0 COMMENT '是否启用，0是 1否',
+  PRIMARY KEY (id)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='wrc-管理用户表';
+/******************************************/
 /**           wrc-船支信息表             **/
 /*****************************************/
 DROP TABLE IF EXISTS wrc_boat_info;
