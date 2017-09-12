@@ -2,8 +2,9 @@ package com.wanerchuan.dao.generation;
 
 import com.wanerchuan.domain.generation.WrcAdmin;
 import com.wanerchuan.domain.generation.WrcAdminExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface WrcAdminMapper {
     long countByExample(WrcAdminExample example);

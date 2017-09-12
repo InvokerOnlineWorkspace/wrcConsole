@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wanerchuan.dao.generation.wrcAdminMapper">
-  <resultMap id="BaseResultMap" type="com.wanerchuan.domain.generation.wrcAdmin">
+  <resultMap id="BaseResultMap" type="com.wanerchuan.domain.generation.WrcAdmin">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
@@ -79,7 +79,7 @@
     id, gmt_created, gmt_modified, created_by, modified_by, login_name, pwd, salt, nick_name, 
     avatar, intro, remark, rol_id, is_valid
   </sql>
-  <select id="selectByExample" parameterType="com.wanerchuan.domain.generation.wrcAdminExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.wanerchuan.domain.generation.WrcAdminExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,7 +103,7 @@
     delete from wrc_admin
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.wanerchuan.domain.generation.wrcAdmin">
+  <insert id="insert" parameterType="com.wanerchuan.domain.generation.WrcAdmin">
     insert into wrc_admin (id, gmt_created, gmt_modified, 
       created_by, modified_by, login_name, 
       pwd, salt, nick_name, 
@@ -115,7 +115,7 @@
       #{avatar,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
       #{rolId,jdbcType=INTEGER}, #{isValid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.wanerchuan.domain.generation.wrcAdmin">
+  <insert id="insertSelective" parameterType="com.wanerchuan.domain.generation.WrcAdmin">
     insert into wrc_admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -206,7 +206,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.wanerchuan.domain.generation.wrcAdminExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.wanerchuan.domain.generation.WrcAdminExample" resultType="java.lang.Long">
     select count(*) from wrc_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -282,7 +282,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wanerchuan.domain.generation.wrcAdmin">
+  <update id="updateByPrimaryKeySelective" parameterType="com.wanerchuan.domain.generation.WrcAdmin">
     update wrc_admin
     <set>
       <if test="gmtCreated != null">
@@ -327,7 +327,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wanerchuan.domain.generation.wrcAdmin">
+  <update id="updateByPrimaryKey" parameterType="com.wanerchuan.domain.generation.WrcAdmin">
     update wrc_admin
     set gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},

@@ -3,7 +3,7 @@ package com.wanerchuan.domain.generation;
 import java.io.Serializable;
 import java.util.Date;
 
-public class wrcAdmin implements Serializable {
+public class WrcAdmin implements Serializable {
     private Integer id;
 
     private Date gmtCreated;
