@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wanerchuan.dao.generation.WrcDestinationInfoMapper">
+  <resultMap id="BaseResultMap" type="com.wanerchuan.domain.generation.WrcDestinationInfo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+    <result column="modified_by" jdbcType="VARCHAR" property="modifiedBy" />
+    <result column="destination_cn_name" jdbcType="VARCHAR" property="destinationCnName" />
+    <result column="destination_en_name" jdbcType="VARCHAR" property="destinationEnName" />
+    <result column="destination_intro" jdbcType="VARCHAR" property="destinationIntro" />
+    <result column="weather" jdbcType="VARCHAR" property="weather" />
+    <result column="exit_entry" jdbcType="VARCHAR" property="exitEntry" />
+    <result column="message_mode" jdbcType="VARCHAR" property="messageMode" />
+    <result column="trade" jdbcType="VARCHAR" property="trade" />
+    <result column="medical_advice" jdbcType="VARCHAR" property="medicalAdvice" />
+    <result column="useful_advice" jdbcType="VARCHAR" property="usefulAdvice" />
+    <result column="how_to_arrived" jdbcType="VARCHAR" property="howToArrived" />
+    <result column="public_utility" jdbcType="VARCHAR" property="publicUtility" />
+    <result column="album_id" jdbcType="VARCHAR" property="albumId" />
+    <result column="key_word" jdbcType="VARCHAR" property="keyWord" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, gmt_created, gmt_modified, created_by, modified_by, destination_cn_name, destination_en_name, 
+    destination_intro, weather, exit_entry, message_mode, trade, medical_advice, useful_advice, 
+    how_to_arrived, public_utility, album_id, key_word
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wrc_destination_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wrc_destination_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wanerchuan.domain.generation.WrcDestinationInfo">
+    insert into wrc_destination_info (id, gmt_created, gmt_modified, 
+      created_by, modified_by, destination_cn_name, 
+      destination_en_name, destination_intro, weather, 
+      exit_entry, message_mode, trade, 
+      medical_advice, useful_advice, how_to_arrived, 
+      public_utility, album_id, key_word
+      )
+    values (#{id,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{modifiedBy,jdbcType=VARCHAR}, #{destinationCnName,jdbcType=VARCHAR}, 
+      #{destinationEnName,jdbcType=VARCHAR}, #{destinationIntro,jdbcType=VARCHAR}, #{weather,jdbcType=VARCHAR}, 
+      #{exitEntry,jdbcType=VARCHAR}, #{messageMode,jdbcType=VARCHAR}, #{trade,jdbcType=VARCHAR}, 
+      #{medicalAdvice,jdbcType=VARCHAR}, #{usefulAdvice,jdbcType=VARCHAR}, #{howToArrived,jdbcType=VARCHAR}, 
+      #{publicUtility,jdbcType=VARCHAR}, #{albumId,jdbcType=VARCHAR}, #{keyWord,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wanerchuan.domain.generation.WrcDestinationInfo">
+    insert into wrc_destination_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="createdBy != null">
+        created_by,
+      </if>
+      <if test="modifiedBy != null">
+        modified_by,
+      </if>
+      <if test="destinationCnName != null">
+        destination_cn_name,
+      </if>
+      <if test="destinationEnName != null">
+        destination_en_name,
+      </if>
+      <if test="destinationIntro != null">
+        destination_intro,
+      </if>
+      <if test="weather != null">
+        weather,
+      </if>
+      <if test="exitEntry != null">
+        exit_entry,
+      </if>
+      <if test="messageMode != null">
+        message_mode,
+      </if>
+      <if test="trade != null">
+        trade,
+      </if>
+      <if test="medicalAdvice != null">
+        medical_advice,
+      </if>
+      <if test="usefulAdvice != null">
+        useful_advice,
+      </if>
+      <if test="howToArrived != null">
+        how_to_arrived,
+      </if>
+      <if test="publicUtility != null">
+        public_utility,
+      </if>
+      <if test="albumId != null">
+        album_id,
+      </if>
+      <if test="keyWord != null">
+        key_word,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedBy != null">
+        #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationCnName != null">
+        #{destinationCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationEnName != null">
+        #{destinationEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationIntro != null">
+        #{destinationIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="exitEntry != null">
+        #{exitEntry,jdbcType=VARCHAR},
+      </if>
+      <if test="messageMode != null">
+        #{messageMode,jdbcType=VARCHAR},
+      </if>
+      <if test="trade != null">
+        #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalAdvice != null">
+        #{medicalAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="usefulAdvice != null">
+        #{usefulAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="howToArrived != null">
+        #{howToArrived,jdbcType=VARCHAR},
+      </if>
+      <if test="publicUtility != null">
+        #{publicUtility,jdbcType=VARCHAR},
+      </if>
+      <if test="albumId != null">
+        #{albumId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        #{keyWord,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wanerchuan.domain.generation.WrcDestinationInfo">
+    update wrc_destination_info
+    <set>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedBy != null">
+        modified_by = #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationCnName != null">
+        destination_cn_name = #{destinationCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationEnName != null">
+        destination_en_name = #{destinationEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationIntro != null">
+        destination_intro = #{destinationIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="weather != null">
+        weather = #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="exitEntry != null">
+        exit_entry = #{exitEntry,jdbcType=VARCHAR},
+      </if>
+      <if test="messageMode != null">
+        message_mode = #{messageMode,jdbcType=VARCHAR},
+      </if>
+      <if test="trade != null">
+        trade = #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalAdvice != null">
+        medical_advice = #{medicalAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="usefulAdvice != null">
+        useful_advice = #{usefulAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="howToArrived != null">
+        how_to_arrived = #{howToArrived,jdbcType=VARCHAR},
+      </if>
+      <if test="publicUtility != null">
+        public_utility = #{publicUtility,jdbcType=VARCHAR},
+      </if>
+      <if test="albumId != null">
+        album_id = #{albumId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        key_word = #{keyWord,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wanerchuan.domain.generation.WrcDestinationInfo">
+    update wrc_destination_info
+    set gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      modified_by = #{modifiedBy,jdbcType=VARCHAR},
+      destination_cn_name = #{destinationCnName,jdbcType=VARCHAR},
+      destination_en_name = #{destinationEnName,jdbcType=VARCHAR},
+      destination_intro = #{destinationIntro,jdbcType=VARCHAR},
+      weather = #{weather,jdbcType=VARCHAR},
+      exit_entry = #{exitEntry,jdbcType=VARCHAR},
+      message_mode = #{messageMode,jdbcType=VARCHAR},
+      trade = #{trade,jdbcType=VARCHAR},
+      medical_advice = #{medicalAdvice,jdbcType=VARCHAR},
+      useful_advice = #{usefulAdvice,jdbcType=VARCHAR},
+      how_to_arrived = #{howToArrived,jdbcType=VARCHAR},
+      public_utility = #{publicUtility,jdbcType=VARCHAR},
+      album_id = #{albumId,jdbcType=VARCHAR},
+      key_word = #{keyWord,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

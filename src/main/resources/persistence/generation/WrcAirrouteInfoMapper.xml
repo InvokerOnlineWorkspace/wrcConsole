@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wanerchuan.dao.generation.WrcAirrouteInfoMapper">
+  <resultMap id="BaseResultMap" type="com.wanerchuan.domain.generation.WrcAirrouteInfo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+    <result column="modified_by" jdbcType="VARCHAR" property="modifiedBy" />
+    <result column="airroute_name" jdbcType="VARCHAR" property="airrouteName" />
+    <result column="airroute_intro" jdbcType="VARCHAR" property="airrouteIntro" />
+    <result column="destination_id" jdbcType="VARCHAR" property="destinationId" />
+    <result column="album_id" jdbcType="VARCHAR" property="albumId" />
+    <result column="key_word" jdbcType="VARCHAR" property="keyWord" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, gmt_created, gmt_modified, created_by, modified_by, airroute_name, airroute_intro, 
+    destination_id, album_id,key_word
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wrc_airroute_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wrc_airroute_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wanerchuan.domain.generation.WrcAirrouteInfo">
+    insert into wrc_airroute_info (id, gmt_created, gmt_modified, 
+      created_by, modified_by, airroute_name, 
+      airroute_intro, destination_id, album_id,key_word
+      )
+    values (#{id,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{modifiedBy,jdbcType=VARCHAR}, #{airrouteName,jdbcType=VARCHAR}, 
+      #{airrouteIntro,jdbcType=VARCHAR}, #{destinationId,jdbcType=VARCHAR}, #{albumId,jdbcType=VARCHAR}
+      #{keyWord,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wanerchuan.domain.generation.WrcAirrouteInfo">
+    insert into wrc_airroute_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="createdBy != null">
+        created_by,
+      </if>
+      <if test="modifiedBy != null">
+        modified_by,
+      </if>
+      <if test="airrouteName != null">
+        airroute_name,
+      </if>
+      <if test="airrouteIntro != null">
+        airroute_intro,
+      </if>
+      <if test="destinationId != null">
+        destination_id,
+      </if>
+      <if test="albumId != null">
+        album_id,
+      </if>
+      <if test="keyWord != null">
+        key_word,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedBy != null">
+        #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="airrouteName != null">
+        #{airrouteName,jdbcType=VARCHAR},
+      </if>
+      <if test="airrouteIntro != null">
+        #{airrouteIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationId != null">
+        #{destinationId,jdbcType=VARCHAR},
+      </if>
+      <if test="albumId != null">
+        #{albumId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        key_word,
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wanerchuan.domain.generation.WrcAirrouteInfo">
+    update wrc_airroute_info
+    <set>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedBy != null">
+        modified_by = #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="airrouteName != null">
+        airroute_name = #{airrouteName,jdbcType=VARCHAR},
+      </if>
+      <if test="airrouteIntro != null">
+        airroute_intro = #{airrouteIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationId != null">
+        destination_id = #{destinationId,jdbcType=VARCHAR},
+      </if>
+      <if test="albumId != null">
+        album_id = #{albumId,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        key_word = #{keyWord,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wanerchuan.domain.generation.WrcAirrouteInfo">
+    update wrc_airroute_info
+    set gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      modified_by = #{modifiedBy,jdbcType=VARCHAR},
+      airroute_name = #{airrouteName,jdbcType=VARCHAR},
+      airroute_intro = #{airrouteIntro,jdbcType=VARCHAR},
+      destination_id = #{destinationId,jdbcType=VARCHAR},
+      album_id = #{albumId,jdbcType=VARCHAR},
+      key_word = #{keyWord,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

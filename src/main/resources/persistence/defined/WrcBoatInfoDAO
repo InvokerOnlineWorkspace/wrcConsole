@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wanerchuan.dao.defined.WrcBoatInfoDao">
+    <resultMap id="BaseResultMap" type="com.wanerchuan.domain.generation.WrcBoatInfo">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+        <result column="modified_by" jdbcType="VARCHAR" property="modifiedBy" />
+        <result column="boat_name" jdbcType="VARCHAR" property="boatName" />
+        <result column="min_price" jdbcType="INTEGER" property="minPrice" />
+        <result column="max_price" jdbcType="INTEGER" property="maxPrice" />
+        <result column="boat_type" jdbcType="VARCHAR" property="boatType" />
+        <result column="boat_brand" jdbcType="VARCHAR" property="boatBrand" />
+        <result column="boat_detail" jdbcType="VARCHAR" property="boatDetail" />
+        <result column="dest_id" jdbcType="VARCHAR" property="destId" />
+        <result column="boat_seat" jdbcType="INTEGER" property="boatSeat" />
+        <result column="album_id" jdbcType="VARCHAR" property="albumId" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, gmt_created, gmt_modified, created_by, modified_by, boat_name, min_price, max_price,
+        boat_type,boat_brand, boat_detail,dest_id,boat_seat,album_id
+    </sql>
+    <select id="queryBoatCountNum" resultType="java.lang.Integer">
+        SELECT count(*) from wrc_boat_info
+    </select>
+    <select id="queryALLBoatInfoList" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Colum_List" />
+        FROM
+        wrc_boat_info
+    </select>
+</mapper>
