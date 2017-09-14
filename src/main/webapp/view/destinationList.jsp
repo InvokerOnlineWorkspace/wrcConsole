@@ -107,7 +107,7 @@
 <!--content part-->
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 我的站点</a> <a href="#" class="current">目的地信息</a> </div>
+    <div id="breadcrumb"> <a href="#" title="返回我的站点" class="tip-bottom"><i class="icon-home"></i> 我的站点</a> <a href="#" class="current">目的地信息</a> </div>
     <h1>目的地</h1>
     <div style="float: left;padding-left: 20px">
       <a href="<%=basePath%>/modify">

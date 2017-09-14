@@ -67,4 +67,6 @@
         <property name="annotationClass" value="org.springframework.stereotype.Repository"/>
         <property name="basePackage" value="com.wanerchuan.dao"/>
     </bean>
+
+    <bean id="loginCheckFilter" class="com.wanerchuan.commons.login.LoginCheckFilter"></bean>
 </beans>

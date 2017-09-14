@@ -32,6 +32,10 @@ public class WrcAdmin implements Serializable {
 
     private Integer isValid;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {

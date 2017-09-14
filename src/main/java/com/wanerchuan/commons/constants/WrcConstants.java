@@ -1,4 +1,4 @@
-package com.wanerchuan.commons;
+package com.wanerchuan.commons.constants;
 
 /**
  * Created by zzh on 2017/9/6.
