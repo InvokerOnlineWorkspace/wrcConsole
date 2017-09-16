@@ -88,7 +88,7 @@
     <div id="breadcrumb"> <a href="<%=basePath%>/index" title="返回我的站点" class="tip-bottom"><i class="icon-home"></i> 我的站点</a> <a href="#" class="current">帆船信息</a> </div>
     <h1>帆船列表</h1>
     <div style="float: left;padding-left: 20px">
-      <a href="<%=basePath%>/modify">
+      <a href="<%=basePath%>/boat/info?method=1">
         <button class="btn btn-success"><i class="icon-plus"> 新增帆船信息</i></button>
       </a>
     </div>
@@ -124,13 +124,13 @@
                   <td>${boatInfo.boatBrand}</td>
                   <td class="center">${boatInfo.boatSeat}</td>
                   <td class="center">
-                    <a href="<%=basePath%>/boat/info?id=${boatInfo.id}">
+                    <a href="<%=basePath%>/boat/info?id=${boatInfo.id}&method=0">
                       <button  class="btn btn-info btn-mini"><i class="icon-eye-open"></i></button>
                     </a>
-                    <a href="<%=basePath%>/boat/modify?id=${boatInfo.id}">
+                    <a href="<%=basePath%>/boat/info?id=${boatInfo.id}&method=2">
                     <button  class="btn btn-warning btn-mini"><i class="icon-edit"></i></button>
                     </a>
-                    <a href="<%=basePath%>/boat/remove?id=${boatInfo.id}">
+                    <a href="<%=basePath%>/boat/del?id=${boatInfo.id}">
                     <button  class="btn btn-danger btn-mini"><i class="icon-trash"></i></button>
                     </a>
                   </td>

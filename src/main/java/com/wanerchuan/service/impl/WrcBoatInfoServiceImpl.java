@@ -42,5 +42,9 @@ public class WrcBoatInfoServiceImpl implements WrcBoatInfoService {
         return this.wrcBoatInfoMapper.insert(wrcBoatInfo);
     }
 
+    public int delBoatInfoById(String id) {
+        return this.wrcBoatInfoMapper.deleteByPrimaryKey(id);
+    }
+
 
 }

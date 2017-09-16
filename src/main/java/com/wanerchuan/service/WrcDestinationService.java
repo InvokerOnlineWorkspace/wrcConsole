@@ -16,7 +16,18 @@ public interface WrcDestinationService {
     List<WrcDestinationInfo> getDestinationList(Map<String,Object> map);
 
     /**
+     * 获取全部目的地信息
+     * */
+    List<WrcDestinationInfo> getAllDestList();
+
+    /**
      * 获取目的地信息
      * */
     WrcDestinationInfo getDestinaInfo(String id);
+
+    int saveDestInfo(WrcDestinationInfo destInfo);
+
+    int editDestInfoById(WrcDestinationInfo destInfo);
+
+    int delDestInfoById(String id);
 }

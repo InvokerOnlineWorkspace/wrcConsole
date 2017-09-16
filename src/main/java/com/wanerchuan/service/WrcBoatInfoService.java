@@ -29,4 +29,6 @@ public interface WrcBoatInfoService {
 
     int saveBoatInfo(WrcBoatInfo wrcBoatInfo);
 
+    int delBoatInfoById(String id);
+
 }
